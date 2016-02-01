@@ -1,0 +1,10 @@
+Question:
+
+How many connected components result after performing the following sequence of union operations on a set of 10 items?
+   1-2  3-4  5-6  7-8  7-9  2-8  0-5  1-9
+
+Answer:
+
+How to solve? Draw 10 numbered nodes and connect them with lines until you have done all of the union operations. count the number of groups (components)
+
+"The three connected components are { 1 2 7 8 9 }, { 3 4 }, and { 0 5 6 }."
