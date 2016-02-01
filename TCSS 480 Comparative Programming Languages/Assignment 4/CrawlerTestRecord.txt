@@ -6,8 +6,12 @@ Test One - 1/31/2016
 	Reason for test: 
 		Test to see if bfs is working.
 	Test case - Urls for test: 
-		Crawl to length 6 on the provided url file.
+		Crawl to depth 6 on the provided url file.
 	Result of Test One:
 		BFS is working. Program successfully navigates websites that 404/403 or have other 		error messages.
 	As expeceted?
 		Yes.
+	Current Problems:
+		1) Doesn't read some text part: <a href =					"http://www.domain.com/folder1/folder1a/pagename.html">Some text</a>
+		
+		2)Doesn't capture all HREF links (capital ones?)
