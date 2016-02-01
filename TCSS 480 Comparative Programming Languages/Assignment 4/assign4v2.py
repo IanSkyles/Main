@@ -57,19 +57,20 @@ def bfsWebsiteCrawl(initialUrls, numNodesToCrawl):
 ##    print(queueOfUrls)
     visitedUrls = set(initialUrls) #keep track of which nodes we have visited
     highestLinkCount = 0
-    linkWithHighestCount = ""
+    linkWithHighestCount = "Not Yet Determined"
+    countCrawled = 0
     print (visitedUrls)
-    while initialUrls and numNodesToCrawl > 0:
+    while initialUrls and countCrawled != numNodesToCrawl:
         print(str(highestLinkCount))
-        numNodesToCrawl = numNodesToCrawl - 1
+        countCrawled = countCrawled + 1
         node = startingUrls.popleft()
-        print (node)
         textOfUrl, links, urlLinkCount = callUrl(node)
         if(urlLinkCount > highestLinkCount):
             print (str(urlLinkCount) + ">" + str(highestLinkCount))
             highestLinkCount = urlLinkCount
             print(str(highestLinkCount))
-            linkWithHigestCount = node
+            print (node)
+            linkWithHighestCount = node
         
         if urlLinkCount == 0:
             print ("No Links or site 404/403")
@@ -81,10 +82,7 @@ def bfsWebsiteCrawl(initialUrls, numNodesToCrawl):
                     visitedUrls.add(link)
         print("Url with higest link count = " + linkWithHighestCount)
         print("Higest Link Count = " + str(highestLinkCount))
-        print()
-        print()
-        print()
-        print()
+        print (str(countCrawled) + " = count crawled")
         print()
         print()
         print()
