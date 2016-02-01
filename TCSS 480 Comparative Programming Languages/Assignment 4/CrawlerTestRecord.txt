@@ -1,0 +1,13 @@
+Testing Assignment 4 - Web Crawler
+
+Test One - 1/31/2016
+	Status of Crawler:
+		The base of the crawler seems to work perfectly. I haven't yet implemented the 		write to csv or anything related to the word count / word cloud for the html 		words.
+	Reason for test: 
+		Test to see if bfs is working.
+	Test case - Urls for test: 
+		Crawl to length 6 on the provided url file.
+	Result of Test One:
+		BFS is working. Program successfully navigates websites that 404/403 or have other 		error messages.
+	As expeceted?
+		Yes.
