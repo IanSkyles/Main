@@ -1,0 +1,25 @@
+Question 1 - (seed = 517755):
+
+
+
+Give the id[] array that results from the following sequence of 6 union
+operations on a set of 10 items using the quick-find algorithm.
+
+    3-2 1-9 5-8 4-7 5-7 0-9 
+
+Your answer should be a sequence of 10 integers, separated by whitespace.
+
+Recall: our quick-find convention for the union operation p-q is to change id[p]
+(and perhaps some other entries) but not id[q].
+
+Answer:
+
+0 1 2 3 4 5 6 7 8 9 - Starting array for 10 elements.
+0 1 2 2 4 5 6 7 8 9 - 3 to 2
+0 9 2 2 4 5 6 7 8 9 - 1 to 9
+0 9 2 2 4 8 6 7 8 9 - 5 to 8
+0 9 2 2 7 8 6 7 8 9 - 4 to 7
+0 9 2 2 7 7 6 7 7 9 - 5 to 7
+9 9 2 2 7 7 6 7 7 9 - 0 to 9
+
+Final Answer: 9 9 2 2 7 7 6 7 7 9

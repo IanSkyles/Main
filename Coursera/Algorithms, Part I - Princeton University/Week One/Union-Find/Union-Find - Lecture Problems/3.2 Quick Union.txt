@@ -1,0 +1,7 @@
+Question:
+
+What is the maximum number of array accesses during a find operation when using the quick-union data structure on N elements?
+
+Answer:
+
+How to think about this? We could have only one tree which is very long. It would take us N - 1 elements to start from the leaf node and get to the root. Therefore, it would take linear (N) time.

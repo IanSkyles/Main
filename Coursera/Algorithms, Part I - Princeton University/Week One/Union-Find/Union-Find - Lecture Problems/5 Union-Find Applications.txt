@@ -1,0 +1,11 @@
+Question:
+
+When opening one new site in the percolation simulation, how many times is union() called?
+
+
+Answer:
+
+How to think about this? Each site is surrounded by at most 4 sites in a percolation simulation.
+So, 4 at most. But, it is only called if a site next to it is open. Our new site could be surrounded by sites that have not yet been opened. Therefore, union can be called 0, 1, 2, 3, or 4 times every time we open a new site.
+
+"It is called for each neighboring site that is already open. There are 4 possible neighbors, but some of them may not already be open."

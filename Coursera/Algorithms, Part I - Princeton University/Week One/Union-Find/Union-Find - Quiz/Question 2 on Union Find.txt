@@ -1,0 +1,22 @@
+Question 2 - (seed = 5319):
+
+
+
+Give the id[] array that results from the following sequence of 9 union
+operations on a set of 10 items using the weighted quick-union algorithm from lecture.
+
+    5-7 2-8 4-1 6-9 4-2 2-3 6-7 9-2 8-0 
+
+Your answer should be a sequence of 10 integers, separated by whitespace.
+
+Recall: when joining two trees of equal size, our weighted quick union convention is to
+make the root of the second tree point to the root of the first tree. Also, our weighted
+quick union algorithm performs union by size (number of nodes) -  not union by height -
+and does not do path compression.
+
+
+Answer:
+
+How to solve? Draw it out.
+
+Final Answer: 4 4 4 4 4 6 4 5 2 6
