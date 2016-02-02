@@ -1,0 +1,28 @@
+Question:
+
+Which of the following functions is O(N3)?
+
+11N+15lgN+100
+13N^2
+25,000N^3
+All of the above
+
+Answer: All of the above.
+
+
+How do we get this answer?
+
+O (big oh) means it is bounded above by n ^ 3 in this case.
+All 3 of the choices are N^3 or below.
+11N <= N^3
+13N^2 <= N^3
+25,000 N^3 <= N^3
+
+
+Instructor notes:
+
+"Recall that big-Oh notation provides only an upper bound on the growth rate of a function as N gets large. In this course, we primarily use tilde notation because it more accurately describes the function—it provides both an upper and lower bound on the function as well as the coefficient of the leading term."
+
+
+
+

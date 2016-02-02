@@ -1,0 +1,13 @@
+Question:
+
+How much memory (in bytes) does a WeightedQuickUnionUF object use as a function of the number of elements N?
+
+N
+2N
+4N
+8N
+
+Answer: 8N
+
+
+
