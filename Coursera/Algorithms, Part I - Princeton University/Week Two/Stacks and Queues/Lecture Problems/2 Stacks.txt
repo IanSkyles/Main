@@ -1,0 +1,41 @@
+
+Question:
+
+Given a reference first to the first node of a null-terminated linked list with at least two nodes, what does the code fragment below do?
+
+
+
+
+Node x = first;
+while (x.next.next != null) {
+	x = x.next;
+}
+x.next = null;
+
+deletes the first node in the list 
+deletes the second node in the list 
+deletes the next to last node in the list 
+deletes the last node in the list
+
+
+Answer:
+
+deletes the last node in the list
+
+How do we get this answer?
+
+Well, think of a two node list. 
+Node One (First) points to Node two and Node two points to null.
+The while loop will fail on the first evaluation so, we wont even
+go inside of it.
+x.next = null causes the first nodes next field to equal null
+We lose all references to our second node (last node in the list) 
+when this happens.
+
+Instructor notes:
+
+Upon termination of the loop, x is a reference to the second to last node. The final statement deletes the last node from the list.
+
+
+
+
