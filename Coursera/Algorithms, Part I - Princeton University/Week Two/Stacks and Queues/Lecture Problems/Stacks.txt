@@ -1,0 +1,36 @@
+
+Question:
+
+Which of the following inputs to our stack test client does not produce the output
+5 4 3 2 1
+
+
+1 2 3 4 5 - - - - - 
+1 2 5 - 3 4 - - - - 
+5 - 1 2 3 - 4 - - - 
+5 - 4 - 3 - 2 - 1 -
+
+Answer: #3, 5 - 1 2 3 - 4 - - - 
+
+
+How do we get this answer?
+
+stack	output
+5		
+		5
+1
+2
+3
+		3
+
+We don't need to go any farther because we have printed 5 and then 3 
+which violqates our goal.
+
+
+Instructor notes:
+
+None. 
+
+
+
+

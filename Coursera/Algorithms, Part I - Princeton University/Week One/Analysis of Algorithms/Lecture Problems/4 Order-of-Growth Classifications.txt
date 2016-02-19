@@ -1,0 +1,11 @@
+Question:
+
+Which of the following order-of-growth classifications represents the maximum number of array accesses used to binary search a sorted array of size N?
+
+constant logarithmic linear linearithmic
+
+Answer:
+
+Logarithmic
+
+"In binary search, the number of array accesses equal the number of compares, which we have seen is approximately 1lgN, e.g., when the key we are searching for is not in the array."

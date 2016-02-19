@@ -1,0 +1,19 @@
+Question:
+
+Suppose that in a quick-union data structure on 10 elements that the id[] array is
+          0 9 6 5 4 2 6 1 0 5
+What are the roots of 3 and 7, respectively?
+
+Answer:
+
+How to think about this? Well we can count from left to right! 
+0 9 6
+0 is the first, 9 is the second and 6 is the third. We are at 3 so we look and see that the third position holds a 6. Therefore, the root of 3 is 6!
+
+0 9 6 5 4 2 6
+Continuing on. 5 is the forth, 4 is the fifth, 2 is the sixth, 6 is the seventh.
+
+
+
+"The root of 3 is 6: 3->5->2->6.
+The root of 7 is 6: 7->1->9->5->2->6."

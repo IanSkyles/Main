@@ -1,0 +1,12 @@
+Question:
+
+What is the maximum number of id[] array entries that can change (from one value to a different value) during one call to union when using the quick-find data structure on N elements?
+
+Answer:
+
+How to think about it? In the worst case scenario, our array could be all 0 except for one 1. In this case we might have to change all the 0s to 1s. This would mean changing N-1 elements of the array.
+
+
+N - 1
+
+"In the worst case, all of the entries except id[q] are changed from id[p] to id[q]."

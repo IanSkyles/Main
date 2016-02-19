@@ -1,0 +1,20 @@
+Question:
+
+Suppose that N equals 1 million. Approximately how much faster is an algorithm that performs NlgN operations versus one that performs N^2 operations? Recall that lg is the base-2 logarithm function.
+
+20x 
+1,000x 
+50,000x 
+1,000,000x
+
+Answer:
+
+How to solve? 
+
+n^2 divided by nlogn = n divided by log n. Now plug in 1 million for each n and calculate.
+166,666.666667
+
+
+
+
+"N^2/(NlgN)=N/lgN=1,000,000/lg(1,000,000). Since 2^20 is approximately 1 million, we obtain approximately 50,000."
