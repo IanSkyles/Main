@@ -1,0 +1,30 @@
+
+Question:
+
+Suppose that, starting from an empty data structure, we perform N push operations in our resizing array implementation of a stack. How many times is the resize() method called?
+
+constant
+logarithmic
+linear
+quadratic
+
+
+Answer:
+
+logarithmic
+
+How do we get this answer?
+
+The number of times we resize does depend on N so it isn't constant. 
+The number of times we resize is under 1 time for each number in N so,
+it isn't linear (or quadratic).
+The number of times we resize is inbetween 0 and 1 times per number in N.
+Therefore, it is logarithmic time.
+
+Instructor notes:
+
+Upon termination of the loop, x is a reference to the second to last node. The final statement deletes the last node from the list.
+
+
+
+
