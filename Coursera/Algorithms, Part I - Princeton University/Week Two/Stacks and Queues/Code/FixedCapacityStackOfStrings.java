@@ -18,7 +18,11 @@ public class FixedCapacityStackOfStrings {
 
 	public string pop() {
 		//note that the s[n] starting position is empty.
-		return s[--N];
+		//return s[--N];
+		//Fix to loitering below.
+		String item = s[--N];
+		s[N] = null;
+		return item;
 	}
 
 
