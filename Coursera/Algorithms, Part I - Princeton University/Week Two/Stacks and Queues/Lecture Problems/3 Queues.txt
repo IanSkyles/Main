@@ -1,0 +1,29 @@
+
+Question:
+
+Suppose that you implement a queue using a null-terminated singly-linked list, maintaining a reference to the item least recently added (the front of the list) but not maintaining a reference to the item most recently added (the end of the list). What are the worst case running times for enqueue and dequeue?
+
+constant time for both enqueue and dequeue
+constant time for enqueue and linear time for dequeue 
+linear time for enqueue and constant time for dequeue
+linear time for both enqueue and dequeue
+
+
+Answer:
+
+linear time for enqueue and constant time for dequeue
+
+How do we get this answer?
+
+We would have to traverse the whole list to get to the back of the line if we
+wanted to add a new element to the queue.
+The first in line has a reference to it and points to the second in line.
+Therefore, the time doesn't grow with the number of elements.
+
+Instructor notes:
+
+Removing a node from the front of a linked list takes constant time. However, it takes linear time to find the last node of a linked list (unless we are careful to maintain a reference to it).
+
+
+
+
