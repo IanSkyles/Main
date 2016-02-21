@@ -1,0 +1,27 @@
+
+Question:
+
+How many compares does selection sort make when the input array is already sorted?
+
+
+linear
+quadratic
+logarithmic
+exponential
+
+Answer:
+
+quadratic
+
+How do we get this answer?
+
+
+It makes always N^2 comparisons and at most N exchanges.
+
+
+Instructor notes:
+
+The number of compares and exchanges made by selection sort does
+not depend on the order of the input.
+
+

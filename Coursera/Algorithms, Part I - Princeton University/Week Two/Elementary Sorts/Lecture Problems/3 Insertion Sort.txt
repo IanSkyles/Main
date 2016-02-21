@@ -1,0 +1,26 @@
+
+Question:
+
+How many compares does insertion sort make on an input array that is already sorted?
+
+constant
+logarithmic
+linear
+quadratic
+
+Answer:
+
+linear
+
+How do we get this answer?
+
+
+The quesiton has to do with the lecture. It is refering to a situation when
+each element is out of order with at most the order to its left.
+
+
+Instructor notes:
+
+Each entry (except the first) is compared against the entry to its left.
+
+
