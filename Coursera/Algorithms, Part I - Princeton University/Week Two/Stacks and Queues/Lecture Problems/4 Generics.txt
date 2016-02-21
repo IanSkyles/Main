@@ -1,0 +1,32 @@
+
+Question:
+
+Which of the following statements is a type safe way to declare and initialize a Stack of integers?
+
+Stack<int> stack = new Stack<int>();
+Stack<Integer> stack = new Stack();
+Stack stack = new Stack<Integer>();
+Stack<Integer> stack = new Stack<Integer>();
+
+Answer:
+
+linear time for enqueue and constant time for dequeue
+
+How do we get this answer?
+
+The first one doesn't use the generic type.
+The second doesn't specify the type or use <> on the second part of the 
+assignment.
+The third doesn't use the <> one the first part. 
+The fourth is the only choice left ;)
+
+Instructor notes:
+
+In Java 6, you must specify the concrete type both when you declare and when you construct the stack.
+Starting in Java 7, you can use the diamond operator instead:
+
+    Stack<Integer> stack = new Stack<>();
+
+
+
+
