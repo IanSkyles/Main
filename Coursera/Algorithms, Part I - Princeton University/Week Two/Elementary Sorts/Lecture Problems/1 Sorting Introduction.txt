@@ -1,0 +1,50 @@
+
+Question:
+
+Consider the data type Temp defined below. Which of the following required
+properties of the Comparable interface does the compareTo() method violate?
+
+
+
+public class Temp implements Comparable<Temp> {
+    private final double deg;
+	    public Temp(double deg) {
+            this.deg = deg;
+        }
+
+        public int compareTo(Temp that) {       
+            double EPS = 0.1;
+            if (this.deg < that.deg - EPS)
+                return -1;
+            if (this.deg > that.deg + EPS)
+                return +1;
+            return  0;
+        }
+
+}
+
+    Antisymmetry
+    Transitivity
+    Totality
+    None of the above
+
+Answer:
+
+Transitivity
+
+How do we get this answer?
+
+
+See intstructors notes. 
+We are introducing a margin of error by adding and subtracting EPS (.1).
+
+
+Instructor notes:
+
+Transitivity is violated. Suppose that a, b, and c refer to objects 
+corresponding to temperatures of 10.16∘, 10.08∘, and 10.00∘, respectively.
+Then, a.compareTo(b) ≤ 0 and b.compareTo(c) ≤ 0, but a.compareTo(c) > 0.
+For this reason, you must not introduce a fudge factor when comparing two
+floating-point numbers if you want to implement the Comparable interface.
+
+
