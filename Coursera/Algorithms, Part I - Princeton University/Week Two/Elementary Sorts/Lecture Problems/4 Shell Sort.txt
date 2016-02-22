@@ -1,0 +1,28 @@
+
+Question:
+
+How many compares does shellsort (using the 3x+1 increment sequence) 
+make on an input array that is already sorted?
+
+constant 
+logarithmic
+linear
+linearithmic
+
+Answer:
+
+linearithmic (nlogn)
+
+How do we get this answer?
+
+Just run an example on a large size array.
+(one where h will be 13 or higher.)
+
+
+Instructor notes:
+
+Since successive increment values of h differ by at least a factor of 3,
+there are approximately log3N increment values. For each increment value h,
+the array is already h-sorted so it will make approximately N compares.
+
+
