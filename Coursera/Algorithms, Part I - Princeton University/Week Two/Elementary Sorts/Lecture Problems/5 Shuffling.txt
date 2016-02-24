@@ -1,0 +1,29 @@
+
+Question:
+
+How many possible permutations are there of a deck of 52 playing cards?
+2^52 
+52*52 
+52! 
+52^52
+
+
+Answer:
+
+52!
+
+How do we get this answer?
+
+Well after placing one card in it's slot, we can only place n-1 cards
+in random spots. After that n-2. It continues all the way down until we
+can only put the last card in one spot. 
+Therefore, 52*51*50*49*...*1 = 52! 
+
+
+Instructor notes:
+
+Since successive increment values of h differ by at least a factor of 3,
+there are approximately log3N increment values. For each increment value h,
+the array is already h-sorted so it will make approximately N compares.
+
+

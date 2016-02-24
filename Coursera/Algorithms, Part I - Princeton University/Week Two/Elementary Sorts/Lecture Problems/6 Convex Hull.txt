@@ -1,0 +1,23 @@
+
+Question:
+
+What is the maximum number of vertices that can be on the 
+convex hull of a set of N points?
+
+constant
+logarithmic
+linear
+linearithmic
+
+Answer:
+
+linear
+
+How do we get this answer?
+
+imagine n = 3. A goes to B, B goes to C, and C goes A.
+
+
+Instructor notes:
+
+If the input points are points on the circumference of a circle (or a regular N-gon), then all N points will be on the convex hull.
