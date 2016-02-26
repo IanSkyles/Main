@@ -1,0 +1,35 @@
+(seed = 703054)
+Consider an object of type GenericMysteryBox<Long> that stores N items of type Long
+in a generic array items[] of length N.
+
+    public class GenericMysteryBox<Item> {
+        private int N;
+        private Item[] items;
+
+        ...
+    }
+
+Using the 64-bit memory cost model from the lecture, how many bytes does it use as a function of N?
+Include all memory referenced by the object and use tilde notation to simplify your answer.
+For example, enter ~ 4N if the number of bytes as a function of N is 4N + 32.
+
+Hint: an object of the wrapper type Long uses 24 bytes.
+
+
+Answer:
+
+A correct answer matches the regular expression: \s*~?\s*32\s*N\s*
+For example, the following is a correct answer: ~ 32N
+Below is a detailed accounting:
+
+public class GenericMysteryBox<Item> {        //       16 (object overhead)
+    private int N;                            //        4 (int)
+    private Item[] items;                     //        8 (reference to array)
+                                              //  8N + 24 (array of Long references)
+                                              //      24N (Long objects)
+    ...                                                 4 (padding to round up to a multiple of 8)
+}                                                 -------
+                                                 32N + 56  ~ 32N
+
+Final Answer: 
+~32N

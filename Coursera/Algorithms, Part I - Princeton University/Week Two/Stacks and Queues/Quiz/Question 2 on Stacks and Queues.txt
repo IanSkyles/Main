@@ -1,0 +1,30 @@
+(seed = 633225)
+Suppose that an intermixed sequence of 10 enqueue and 10 dequeue operations are performed
+on a FIFO queue. The enqueue operations add the values 0 through 9 to the data structure,
+in the order given; the dequeue operations delete and print out the return values.
+Which of the following output sequence(s) could occur? Check all that apply.
+
+
+Answer:
+
+YES:
+
+0 1 2 3 4 5 6 7 8 9
+Correct	0.20	0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 -
+
+NO:
+
+0 1 2 5 8 4 7 6 3 9
+Correct	0.20	The fourth item enqueued is 3 but the fourth item dequeued is 5.
+
+0 1 2 3 4 5 7 9 6 8
+Correct	0.20	The seventh item enqueued is 6 but the seventh item dequeued is 7.
+
+3 5 4 6 7 2 1 8 9 0
+Correct	0.20	The first item enqueued is 0 but the first item dequeued is 3.
+
+0 1 2 3 4 6 7 9 8 5
+Correct	0.20	The sixth item enqueued is 5 but the sixth item dequeued is 6.
+
+Final Answer: 
+You can only get one result!

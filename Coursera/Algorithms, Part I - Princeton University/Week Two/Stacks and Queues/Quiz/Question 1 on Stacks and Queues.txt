@@ -9,23 +9,22 @@ Answer:
 
 YES
 4 3 2 1 0 5 6 7 8 9
-Correct	0.20	0 1 2 3 4 - - - - - 5 - 6 - 7 - 8 - 9 -
+0 1 2 3 4 - - - - - 5 - 6 - 7 - 8 - 9 -
 
 0 2 1 4 3 6 7 5 8 9
-Correct	0.20	0 - 1 2 - - 3 4 - - 5 6 - 7 - - 8 - 9 -
+0 - 1 2 - - 3 4 - - 5 6 - 7 - - 8 - 9 -
 
 0 5 7 6 8 9 4 3 2 1
-Correct	0.20	0 - 1 2 3 4 5 - 6 7 - - 8 - 9 - - - - -
+0 - 1 2 3 4 5 - 6 7 - - 8 - 9 - - - - -
 
 NO
 
 0 3 5 2 6 7 8 4 1 9
-Correct	0.20	When 5 is pushed, both 2 and 4 are still on the stack. So, 4 would be popped before 2.
+When 5 is pushed, both 2 and 4 are still on the stack. So, 4 would be popped before 2.
 
 1 2 0 5 7 4 6 3 9 8
-Correct	0.20	When 7 is pushed, both 4 and 6 are still on the stack. So, 6 would be popped before 4.
-Total		1.00 / 1.00	
-
+When 7 is pushed, both 4 and 6 are still on the stack. So, 6 would be popped before 4.
 
 Final Answer: 
 Outcomes 1,2, and 3 are possible to get via the input.
+Total		1.00 / 1.00 - Each question = .2 points.
