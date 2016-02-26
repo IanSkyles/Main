@@ -1,0 +1,31 @@
+(seed = 118295)
+Suppose that an intermixed sequence of 10 push and 10 pop operations are performed
+on a LIFO stack. The push operations add the values 0 through 9 to the stack, in the
+order given; the intermixed pop operations delete and print out the return values
+Which of the following output sequence(s) could occur? Check all that apply.
+
+
+Answer:
+
+YES
+4 3 2 1 0 5 6 7 8 9
+Correct	0.20	0 1 2 3 4 - - - - - 5 - 6 - 7 - 8 - 9 -
+
+0 2 1 4 3 6 7 5 8 9
+Correct	0.20	0 - 1 2 - - 3 4 - - 5 6 - 7 - - 8 - 9 -
+
+0 5 7 6 8 9 4 3 2 1
+Correct	0.20	0 - 1 2 3 4 5 - 6 7 - - 8 - 9 - - - - -
+
+NO
+
+0 3 5 2 6 7 8 4 1 9
+Correct	0.20	When 5 is pushed, both 2 and 4 are still on the stack. So, 4 would be popped before 2.
+
+1 2 0 5 7 4 6 3 9 8
+Correct	0.20	When 7 is pushed, both 4 and 6 are still on the stack. So, 6 would be popped before 4.
+Total		1.00 / 1.00	
+
+
+Final Answer: 
+Outcomes 1,2, and 3 are possible to get via the input.
