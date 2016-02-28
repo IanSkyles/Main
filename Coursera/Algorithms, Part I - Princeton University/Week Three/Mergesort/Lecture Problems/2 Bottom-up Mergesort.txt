@@ -1,0 +1,23 @@
+
+Question:
+
+How many compares does mergesort—the pure version without any 
+optimizations—make to sort an input array that is already sorted?
+
+constant
+logarithmic
+linear
+linearithmic
+
+Answer:
+
+logarithmic (logN)
+
+
+How to solve:
+Walk through a visualization of the bottom up mergesort.
+
+
+Instructor notes:
+
+None
