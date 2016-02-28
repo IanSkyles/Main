@@ -1,0 +1,18 @@
+
+Question:
+
+How many compares does mergesort—the pure version without any optimizations—make to sort an input array that is already sorted?
+
+constant
+logarithmic
+linear
+linearithmic
+
+Answer:
+
+linearithmic (NlogN)
+
+
+Instructor notes:
+
+It makes ~1/2 NlgN compares, which is the best case for mergesort. We note that the optimized version that checks whether a[mid]≤a[mid+1] only requires ~N compares.
