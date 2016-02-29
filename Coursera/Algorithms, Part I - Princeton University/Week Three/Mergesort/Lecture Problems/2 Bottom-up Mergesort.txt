@@ -15,6 +15,7 @@ logarithmic (logN)
 
 
 How to solve:
+
 Walk through a visualization of the bottom up mergesort.
 
 
