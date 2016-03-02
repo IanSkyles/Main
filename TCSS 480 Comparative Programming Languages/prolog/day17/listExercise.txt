@@ -1,0 +1,23 @@
+[a,b,c,d]  =  [a,[b,c,d]].
+	false - because we don't have as many list elements as variables.
+[a,b,c,d]  =  [a|[b,c,d]].
+	true - we do have as many list elements as variables
+[a,b,c,d]  =  [a,b,[c,d]].
+	false - because we don't have as many list elements as variables.
+[a,b,c,d]  =  [a,b|[c,d]].
+	true - we do have as many list elements as variables
+[a,b,c,d]  =  [a,b,c,[d]].
+	false - doesn't know how to handle assigning a 
+	variable as a list with vars in it?
+[a,b,c,d]  =  [a,b,c|[d]].
+	true - we do have as many list elements as variables. Pipe helps seperate.
+[a,b,c,d]  =  [a,b,c,d,[]].
+	false - [a] = [] doesn't work either nor does [a] = [[]]
+[a,b,c,d]  =  [a,b,c,d|[]].
+	true
+[]  =  _.
+	true - _ is anything
+[]  =  [_].
+	false - empty list doesn't equal to anything inside a list.
+[]  =  [_|[]].
+	false - empty list doesn't equal to anything inside a list.
