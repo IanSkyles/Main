@@ -1,0 +1,94 @@
+dominoes: 
+	At first I walked through some examples (mainly the one given on the pdf)
+	then, made psuedocode on a piece of paper. Next, I started coding. 
+	I thought to use case statement or if statments. I figured to try case statments as 
+	they are interesting and seemed like a relevant choice. But, I had to figure
+	out how to use it on two variables. I failed to get that version working.
+	I don't think that I did it in the desired, good code style,
+	way (one where you have a tuple case rather than nestled cases).
+	When I finally got a version running I used the test cases provided.
+	All passed from what I could see (the list condenses on display).
+
+flip: 
+	I used the same process as I used in Dominoes.
+	First I walked through some examples (mainly the one given on the pdf)
+	then, made psuedocode on a piece of paper. Next, I started coding. 
+	I did this iteratively by first developing a swap function in a different file
+	and testing to make sure it worked for two tuples as I desired. Then, I went on to
+	the actualy flip function.
+	It is worth noting that most of my functions were developed in their own file,
+	tested there, then put into the main "domino.sml" file.
+	I did run into a similar bad programming style again. I nestled let statements.
+	It just makes the code more compelx (it took me a while to figure out how to properly
+	do this). My original approach was flawed in the way I was trying to combine the elements.
+	I had to do some restructuring and it was definitely a brain teaser.
+	When I finally got a version running I used the test cases provided.
+	Some tests failed, then I iterated. I ran the new code and now, one test failed,
+	the one with input [(0,0)].
+	I iterated again and was able to get all tests passing. 
+
+solution:
+	I developed solution before developing eulers or flip.
+	I used my usual process (example, psuedocode, abstract functinos out).
+	I put an isOdd function we used in class into the solution function
+	to check if it is even possible to get a circular train (it is
+	not possible for odd numbers).
+	This method was fairly straightforward besides what I should do if given < 0.
+	I did find that the project outline was not very clear on bounds/error handling.
+	This function was pretty straightforward for me.
+
+listAsString:
+	This was straightforward as far as what needed to be done.
+	I did have difficulties at first but, I looked at our class slides
+	and the video lectures from cse343 (dan grossman). I pretty much had to 
+	replicated the fold code but, change it slightly to get desired output!
+	The solution to this function didn't take as long as flip or dominoes. 
+	But, i ended up getting stuck and it took a long time to find
+	my bug. This was partially myfault as i was not reading carefully over the 
+	line of code producing the error. I put : instead of ::. Also,
+	I frogot the fun keyword. 
+
+driver:
+	The idea of this function is straightfroward as well. 
+	But, I was having difficulties figuring out the syntax for the outside 
+	variable / input.
+
+
+Syntax in SML is very tricky. For example, i had to look up not equal <>. Another thing that is weird about sml in my opinion is the if, else if, else structure. then is only required after if and else if but, it is not required after else. I did have to consult sml resources on syntax. One thing I liked about us learning SML was that I gained more of an appreciation or languages like Java and Python.
+
+I am glad that I have a database of sml code from class on my computer. 
+I found our examples from class of making strings 
+useful for the listAsString function.
+Slides from day 14 also contained the main idea of recursively iterating through
+a list.
+
+Funny things:
+When I was testing my dominoes (domino creator) function I found out
+that you can negate 0, eg ~0. 
+I spent about an hour trying to debug my listAsStiring function. I couldn't for
+the life of me figure out what was wrong. 
+Then, I saw that my "fun" keyword was missing!
+I spent about another 15 minutes debugging it only to find : instead of ::
+
+Errors I encountered: 
+
+I made the mistake of trying to use List.length(l) like length (l). I think
+that this is possible but, only if you do the sml equivalent of importing the
+list basic library.
+
+I put and instead of andalso. Syntax error!
+Original : "else if right = 0 and left <> 0"
+After fix: "else if right = 0 andalso left <> 0"
+I ended up changing to case statement. I tried to un nestle the two case statements but,
+have so far been unsuccesful.
+
+I put - instead of a ~. Syntax error!
+Original "if (N > -1) (*we do not have dominoes less than 0*)"
+Fixed: "if (N > ~1) (*we do not have dominoes less than 0*)"
+
+Unending dominoes function - Logic error.
+Original "then (left,right)::createDominoes(left-1, right-1)"
+Fixed: Well I looked back at the sample and my psuedo code and saw that I should
+	   have been doing (n-1, n-1), so both sides should be the same. 
+	   If i did the above, then right would be -. So, I set both to left -1. 
+Fixed code: Original "then (left,right)::createDominoes(left-1, left-1)"
