@@ -1,4 +1,4 @@
-dominoes: 
+dominoes: FULLY WORKING
 	At first I walked through some examples (mainly the one given on the pdf)
 	then, made psuedocode on a piece of paper. Next, I started coding. 
 	I thought to use case statement or if statments. I figured to try case statments as 
@@ -9,7 +9,7 @@ dominoes:
 	When I finally got a version running I used the test cases provided.
 	All passed from what I could see (the list condenses on display).
 
-flip: 
+flip: FULLY WORKING
 	I used the same process as I used in Dominoes.
 	First I walked through some examples (mainly the one given on the pdf)
 	then, made psuedocode on a piece of paper. Next, I started coding. 
@@ -27,7 +27,7 @@ flip:
 	the one with input [(0,0)].
 	I iterated again and was able to get all tests passing. 
 
-solution:
+solution: FULLY WORKING
 	I developed solution before developing eulers or flip.
 	I used my usual process (example, psuedocode, abstract functinos out).
 	I put an isOdd function we used in class into the solution function
@@ -37,7 +37,7 @@ solution:
 	I did find that the project outline was not very clear on bounds/error handling.
 	This function was pretty straightforward for me.
 
-listAsString:
+listAsString: FULLY WORKING
 	This was straightforward as far as what needed to be done.
 	I did have difficulties at first but, I looked at our class slides
 	and the video lectures from cse343 (dan grossman). I pretty much had to 
@@ -48,11 +48,20 @@ listAsString:
 	line of code producing the error. I put : instead of ::. Also,
 	I frogot the fun keyword. 
 
-driver:
+driver: FULLY WORKING
 	The idea of this function is straightfroward as well. 
 	But, I was having difficulties figuring out the syntax for the outside 
 	variable / input.
+	Currying is quite confusing and I don't think we spent enough time on it.
+	It must be used like this:
+	My driver works on the tests. It obviosuly doesn't return the right value for
+	most because eulers does not work.
 
+eulers: NOT WORKING
+	I couldn't figure out how to recurisvely make a graph and then 
+	solve it via the algorithms given. I spent hours and hours trying 
+	to figure this out only to come up with nonworking code.
+	So, this just returns the answer for 2 at the moment so that I could test.
 
 Syntax in SML is very tricky. For example, i had to look up not equal <>. Another thing that is weird about sml in my opinion is the if, else if, else structure. then is only required after if and else if but, it is not required after else. I did have to consult sml resources on syntax. One thing I liked about us learning SML was that I gained more of an appreciation or languages like Java and Python.
 
