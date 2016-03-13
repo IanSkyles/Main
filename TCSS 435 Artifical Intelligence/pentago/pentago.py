@@ -143,7 +143,29 @@ def checkForWin(gameBoardState):
 
 
 def checkWinningDiagnol(gameBoardState):
-	TODO
+	#check right to left out most diagnols
+	if gameBoardState[0][1] == gameBoardState[0][5] == gameBoardState[1][6] == gameBoardState[3][1] == gameBoardState[0][5]:
+		return gameBoardState[0][1]
+	if gameBoardState[0][3] == gameBoardState[0][7] == gameBoardState[2][2] == gameBoardState[3][3] == gameBoardState[0][7]:
+		return gameBoardState[0][3]
+	#check the two right to left middle chances
+	if gameBoardState[0][0] == gameBoardState[0][4] == gameBoardState[0][8] == gameBoardState[3][0] == gameBoardState[3][4]:
+		return gameBoardState[0][0]
+	if gameBoardState[0][4] == gameBoardState[0][8] == gameBoardState[3][0] == gameBoardState[3][4] == gameBoardState[3][8]:
+		return gameBoardState[0][4]
+	#check left to right out most diagnols
+	if gameBoardState[1][1] == gameBoardState[0][3] == gameBoardState[0][8] == gameBoardState[2][1] == gameBoardState[2][3]:
+		return gameBoardState[1][1]
+	if gameBoardState[1][5] == gameBoardState[1][7] == gameBoardState[3][0] == gameBoardState[2][5] == gameBoardState[2][7]:
+		return gameBoardState[1][5]
+	#check the two left to right middle chances
+	if gameBoardState[2][6] == gameBoardState[2][4] == gameBoardState[2][2] == gameBoardState[1][6] == gameBoardState[1][4]:
+		return gameBoardState[2][6]
+	if gameBoardState[2][4] == gameBoardState[2][2] == gameBoardState[1][6] == gameBoardState[1][4] == gameBoardState[1][2]:
+		return gameBoardState[2][4]
+	#no winner found
+	return 'n'
+
 
 #returns the color of the winner (b or w) or n if neither win
 def checkWinningStateRows(gameBoardState):
