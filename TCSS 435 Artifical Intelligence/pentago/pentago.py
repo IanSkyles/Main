@@ -35,5 +35,51 @@ def printTwoBlocks(firstBlock, secondBlock,gameBoard):
 			print(gameBoard[secondBlock][partitionCol + partitionRow * 3]),
 		print ("|")
 
+#needs to get input from user
+#format will be block/position blockDirection
+#eg 3/8 1R or 2/4 3L
+def getMoveFromUser(gameBoard):
+	while True:
+		try:
+			print ("Your move? (You will have to repeat if not formatted correctly)")
+			print ("put in format block/position blockDirection")
+			move = raw_input("eg 3/8 1R or 2/4 3L")
+			#print (move.split(' '))
+			move = move.split(' ')
+			# print(move[0][0])
+			# print(move[0][2])
+			# print(move[1][0])
+			# print(move[1][1])
+			if isInputValidSquare(int(move[0][0]),int(move[0][2]),gameBoard):
+				if isInputValidRotation(int(move[1][0]),int(move[1][1])):
+					return ([[int(move[0][0]),int(move[0][2])],[int(move[1][0]),int(move[1][1])]])
+		except Exception as e:
+			print ("")
+			print "Incorrect format"
+			print("")
+
+
+def isInputValidSquare(gameBoardNumber,pieceNumber,gameBoard):
+	numberList = ['1','2','3','4','5','6','7','8','9']
+	gameBoardList = ['1','2','3','4']
+	#check if input is valid gameBoard
+	if gameBoardNumber in gameBoardList:
+		#if valid piece position
+		if pieceNumber in numberList:
+			#if move not already taken
+			if gameBoard[gameBoardNumber-1][pieceNumber-1]:
+				return True
+	return False
+	#return pieceNumber in numberList and gameBoardNumber in gameBoardList and gameBoard[gameBoardList-1][pieceNumber-1]
+
+def isInputValidRotation(number, letter):
+	rotationList = ['l', 'r', 'L', 'R']	
+	gameBoardList = ['1','2','3','4']
+	return letter in rotationList and number in gameBoardList
+
+
 if __name__ == "__main__":
-	printBoard(gameBoardState)
+	getMoveFromUser(gameBoardState)
+	getMoveFromUser(gameBoardState)
+	getMoveFromUser(gameBoardState)
+	#printBoard(gameBoardState)
