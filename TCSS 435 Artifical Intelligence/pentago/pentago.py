@@ -202,10 +202,35 @@ def checkWinningStateCols(gameBoardState,winnerSet):
 				winnerSet.add(gameBoardState[0][2+r])
 	#if set has length 0, no winner found
 	return winnerSet
+def convert(state):
+	newFormat = []
+	#block 1&2
+	for i in range(0,3):
+		for j in range(0,3):
+			#block 1 row i
+			newFormat.append(state[0][j + i*3])
+		print
+		for j in range(0,3):
+			#block 2 row i
+			newFormat.append(state[1][j + i*3])
+		print
+	print
+	#block 3&4
+	for i in range(0,3):
+		for j in range(0,3):
+			#block 3 row i
+			newFormat.append(state[2][j + i*3])
+		print
+		for j in range(0,3):
+			#block 4 row i
+			newFormat.append(state[3][j + i*3])
+		print
+	return newFormat
 
 if __name__ == "__main__":
-	printBoard(rotateGame(testBoard, 4, 'L'))
-	printBoard(rotateGame(testBoard, 1, 'R'))
+	#printBoard(rotateGame(testBoard, 4, 'L'))
+	#printBoard(rotateGame(testBoard, 1, 'R'))
+	print(convert(testBoard))
 	winner = set()
 	print (checkWinningStateCols(testBoardWin_Column_And_Row,winner))
 	print (checkWinningStateRows(testBoardWin_Column_And_Row,winner))
