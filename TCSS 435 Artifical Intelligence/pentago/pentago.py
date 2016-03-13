@@ -132,6 +132,19 @@ def rotateLeft(gameBoardSubBoardTarget):
 			gameBoardSubBoardTarget[3],
 			gameBoardSubBoardTarget[6]]
 
+def checkForWin(gameBoardState):
+	winner = checkWinningStateCols(gameBoardState) 
+	if winner != 'n':
+		return winner
+	winner = checkWinningStateRows(gameBoardState)
+	if winner != 'n':
+		return winner
+	return checkWinningDiagnol(gameBoardState)
+
+
+def checkWinningDiagnol(gameBoardState):
+	TODO
+
 #returns the color of the winner (b or w) or n if neither win
 def checkWinningStateRows(gameBoardState):
 	for r in range (0,3):
