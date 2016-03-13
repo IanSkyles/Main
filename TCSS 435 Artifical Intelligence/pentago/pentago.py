@@ -1,10 +1,14 @@
+from random import randint
 
 #initialGameBoard will be 2d array with 4 arrays of 9
 gameBoardState = [['-','-','-','-','-','-','-','-','-'],
 				['-','-','-','-','-','-','-','-','-'],
 				['-','-','-','-','-','-','-','-','-'],
 				['-','-','-','-','-','-','-','-','-']]
-
+testBoard = [['1','2','3','4','5','6','7','8','9'],
+			['1','2','3','4','5','6','7','8','9'],
+			['1','2','3','4','5','6','7','8','9'],
+			['1','2','3','4','5','6','7','8','9']]
 
 #A method that itterates through the gameBoard and prints each block
 # 1,2,3 of gb 1 then | then 1,2,3 of gb 2 then
@@ -43,7 +47,7 @@ def getMoveFromUser(gameBoard):
 		try:
 			print ("Your move? (You will have to repeat if not formatted correctly)")
 			print ("put in format block/position blockDirection")
-			move = raw_input("eg 3/8 1R or 2/4 3L")
+			move = raw_input("eg 3/8 1R or 2/4 3L\n")
 			#print (move.split(' '))
 			move = move.split(' ')
 			# print(move[0][0])
@@ -86,9 +90,45 @@ def isInputValidRotation(number, letter):
 	gameBoardList = [1,2,3,4]
 	return letter in rotationList and number in gameBoardList
 
+#intended use: 
+#1 = w, 1 = user goes first
+#2 = b, 2 = user goes second
+def decideTokenColorOrPlayerOrder():
+	return randint(0,1)
+
+def rotateGame(gameBoardState, blockNumber, rotationDirection):
+	blockNumber = blockNumber - 1
+	if rotationDirection == "L" or rotationDirection == "l":
+		gameBoardState[blockNumber] = rotateLeft(gameBoardState[blockNumber])
+	else:
+		gameBoardState[blockNumber] = rotateRight(gameBoardState[blockNumber])
+	return gameBoardState
+
+
+def rotateRight(gameBoardSubBoardTarget):
+	return [gameBoardSubBoardTarget[6],
+			gameBoardSubBoardTarget[3],
+			gameBoardSubBoardTarget[0],
+			gameBoardSubBoardTarget[7],
+			gameBoardSubBoardTarget[4],
+			gameBoardSubBoardTarget[1],
+			gameBoardSubBoardTarget[8],
+			gameBoardSubBoardTarget[5],
+			gameBoardSubBoardTarget[2]]
+
+def rotateLeft(gameBoardSubBoardTarget):
+	return [gameBoardSubBoardTarget[2],
+			gameBoardSubBoardTarget[5],
+			gameBoardSubBoardTarget[8],
+			gameBoardSubBoardTarget[1],
+			gameBoardSubBoardTarget[4],
+			gameBoardSubBoardTarget[7],
+			gameBoardSubBoardTarget[0],
+			gameBoardSubBoardTarget[3],
+			gameBoardSubBoardTarget[6]]
 
 if __name__ == "__main__":
-	print (getMoveFromUser(gameBoardState))
-	getMoveFromUser(gameBoardState)
-	getMoveFromUser(gameBoardState)
+	printBoard(rotateGame(testBoard, 4, 'L'))
+	printBoard(rotateGame(testBoard, 1, 'R'))
+	#print (getMoveFromUser(gameBoardState))
 	#printBoard(gameBoardState)
