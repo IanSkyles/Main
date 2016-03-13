@@ -133,7 +133,7 @@ def rotateLeft(gameBoardSubBoardTarget):
 
 #returns a list of winners.
 def checkForWin(gameBoardState):
-	winner = ()
+	winner = set()
 	winner = checkWinningStateCols(gameBoardState,winner) 
 	if len(winner) == 1:
 		return [list(winner)[0]]
@@ -206,7 +206,8 @@ def checkWinningStateCols(gameBoardState,winnerSet):
 if __name__ == "__main__":
 	printBoard(rotateGame(testBoard, 4, 'L'))
 	printBoard(rotateGame(testBoard, 1, 'R'))
-	print (checkWinningStateCols(testBoardWin_Column_And_Row))
-	print (checkWinningStateRows(testBoardWin_Column_And_Row))
+	winner = set()
+	print (checkWinningStateCols(testBoardWin_Column_And_Row,winner))
+	print (checkWinningStateRows(testBoardWin_Column_And_Row,winner))
 	#print (getMoveFromUser(gameBoardState))
 	#printBoard(gameBoardState)
