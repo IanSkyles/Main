@@ -1,0 +1,141 @@
+// Bayesian network 
+network "InternalNetwork" { //8 variables and 8 probability distributions
+}
+variable  "Creative" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (108, 160)" ;
+}
+variable  "Smart" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "observed true" ;
+	property "position = (260, 148)" ;
+}
+variable  "Party" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (459, 154)" ;
+}
+variable  "Happy" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "observed true" ;
+	property "position = (470, 324)" ;
+}
+variable  "HW" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (346, 218)" ;
+}
+variable  "Mac" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (202, 246)" ;
+}
+variable  "Project" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (52, 254)" ;
+}
+variable  "Success" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (120, 359)" ;
+}
+probability (  "Creative" ) { //1 variable(s) and 2 values
+	table 
+		0.69932	// p(true | evidence )
+		0.30068; 	// p(false | evidence );
+}
+probability (  "Smart" ) { //1 variable(s) and 2 values
+	table 
+		0.70472	// p(true | evidence )
+		0.29528; 	// p(false | evidence );
+}
+probability (  "Party" ) { //1 variable(s) and 2 values
+	table 
+		0.60216	// p(true | evidence )
+		0.39784; 	// p(false | evidence );
+}
+probability (  "Happy"  "Party"  "Success"  "Mac" ) { //4 variable(s) and 16 values
+	table 
+		 0.95842 0.72082 0.49234 0.42043 0.04158 0.27918 0.50766 0.57957 0.35837 0.30769 0.20619 0.09646 0.64163 0.69231 0.79381 0.90354;
+}
+probability (  "HW"  "Smart"  "Party" ) { //3 variable(s) and 8 values
+	table 
+		 0.80252 0.8979 0.19748 0.1021 0.09447 0.30556 0.90553 0.69444;
+}
+probability (  "Mac"  "Creative"  "Smart" ) { //3 variable(s) and 8 values
+	table 
+		 0.68564 0.89635 0.31436 0.10365 0.41347 0.12329 0.58653 0.87671;
+}
+probability (  "Project"  "Creative"  "Smart" ) { //3 variable(s) and 8 values
+	table 
+		 0.90484 0.40307 0.09516 0.59693 0.79326 0.10731 0.20674 0.89269;
+}
+probability (  "Success"  "Project"  "HW" ) { //3 variable(s) and 8 values
+	table 
+		 0.89633 0.20737 0.10367 0.79263 0.30714 0.05066 0.69286 0.94934;
+}
+
+
+Posterior distribution:
+probability (  "Happy" ) { //1 variable(s) and 2 values
+	table 
+		0.5238492621420068	// p(true | evidence )
+		0.47615073785799317; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Happy" ) { //1 variable(s) and 2 values
+	table 
+		0.7364433884412747	// p(true | evidence )
+		0.26355661155872534; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Happy" ) { //1 variable(s) and 2 values
+	table 
+		0.5137387713976101	// p(true | evidence )
+		0.48626122860238985; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Happy" ) { //1 variable(s) and 2 values
+	table 
+		0.2506263204733404	// p(true | evidence )
+		0.7493736795266597; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Happy" ) { //1 variable(s) and 2 values
+	table 
+		0.5223159412768336	// p(true | evidence )
+		0.47768405872316644; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Party" ) { //1 variable(s) and 2 values
+	table 
+		0.60216	// p(true | evidence )
+		0.39784; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "Party" ) { //1 variable(s) and 2 values
+	table 
+		0.696282509192595	// p(true | evidence )
+		0.3037174908074049; 	// p(false | evidence );
+}
+	File saved.

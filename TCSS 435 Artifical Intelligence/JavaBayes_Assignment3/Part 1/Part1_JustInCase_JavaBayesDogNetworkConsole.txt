@@ -1,0 +1,151 @@
+JavaBayes Version 0.346
+Copyright 1996 - 1997 Carnegie Mellon University 
+Copyright 1998 - 2000 Fabio Gagliardi Cozman 
+<fgcozman@usp.br>
+<http://www.cs.cmu.edu/~fgcozman/home.html>
+JavaBayes is a system for inferences with Bayesian 
+networks entirely written in Java.
+More documentation at
+<http://www.cs.cmu.edu/~javabayes/>
+
+JavaBayes starts in Move mode.
+To start editing networks, press the Create button and
+click on the JavaBayes editor, or load a network using
+the Network->Open menu.
+
+
+Loading C:\Users\Ian Skyles\TCSS 435\JavaBayes\Examples\DogProblem\dog-problem.bif
+	File loaded.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "family_out" ) { //1 variable(s) and 2 values
+	table 
+		0.15	// p(true | evidence )
+		0.85; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "light_on" ) { //1 variable(s) and 2 values
+	table 
+		0.1325	// p(true | evidence )
+		0.8674999999999999; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.39582999999999996	// p(true | evidence )
+		0.60417; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "bowel_problem" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(true | evidence )
+		0.99; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.39582999999999996	// p(true | evidence )
+		0.60417; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "hear_bark" ) { //1 variable(s) and 2 values
+	table 
+		0.2831227	// p(true | evidence )
+		0.7168773; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "bowel_problem" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(true | evidence )
+		0.99; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.39582999999999996	// p(true | evidence )
+		0.60417; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.99	// p(true | evidence )
+		0.01; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.9	// p(true | evidence )
+		0.1; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "light_on" ) { //1 variable(s) and 2 values
+	table 
+		0.6	// p(true | evidence )
+		0.4; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "light_on" ) { //1 variable(s) and 2 values
+	table 
+		0.05	// p(true | evidence )
+		0.95; 	// p(false | evidence );
+}
+To delete a node, click on it.
+To delete an arrow, click on the arrow's head.
+
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "light_on" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "bowel_problem" ) { //1 variable(s) and 2 values
+	table 
+		0.0	// p(true | evidence )
+		1.0; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "dog_out" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+Posterior distribution:
+probability (  "hear_bark" ) { //1 variable(s) and 2 values
+	table 
+		0.355	// p(true | evidence )
+		0.645; 	// p(false | evidence );
+}
+	File saved.
