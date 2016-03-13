@@ -51,35 +51,44 @@ def getMoveFromUser(gameBoard):
 			# print(move[1][0])
 			# print(move[1][1])
 			if isInputValidSquare(int(move[0][0]),int(move[0][2]),gameBoard):
-				if isInputValidRotation(int(move[1][0]),int(move[1][1])):
-					return ([[int(move[0][0]),int(move[0][2])],[int(move[1][0]),int(move[1][1])]])
+				#print("here")
+				if isInputValidRotation(int(move[1][0]),move[1][1]):
+					#print("here")
+					break
+					
 		except Exception as e:
 			print ("")
 			print "Incorrect format"
 			print("")
+	return ([[int(move[0][0]),int(move[0][2])],[int(move[1][0]),move[1][1]]])
 
 
 def isInputValidSquare(gameBoardNumber,pieceNumber,gameBoard):
-	numberList = ['1','2','3','4','5','6','7','8','9']
-	gameBoardList = ['1','2','3','4']
+	numberList = [1,2,3,4,5,6,7,8,9]
+	gameBoardList = [1,2,3,4]
 	#check if input is valid gameBoard
+	#print (gameBoardNumber)
+	#print (gameBoardNumber in gameBoardList)
 	if gameBoardNumber in gameBoardList:
+		#print("here")
 		#if valid piece position
 		if pieceNumber in numberList:
+			#print("here")
+			#print (gameBoard[gameBoardNumber-1][pieceNumber-1])
 			#if move not already taken
-			if gameBoard[gameBoardNumber-1][pieceNumber-1]:
+			if gameBoard[gameBoardNumber-1][pieceNumber-1] == '-':
 				return True
 	return False
 	#return pieceNumber in numberList and gameBoardNumber in gameBoardList and gameBoard[gameBoardList-1][pieceNumber-1]
 
 def isInputValidRotation(number, letter):
 	rotationList = ['l', 'r', 'L', 'R']	
-	gameBoardList = ['1','2','3','4']
+	gameBoardList = [1,2,3,4]
 	return letter in rotationList and number in gameBoardList
 
 
 if __name__ == "__main__":
-	getMoveFromUser(gameBoardState)
+	print (getMoveFromUser(gameBoardState))
 	getMoveFromUser(gameBoardState)
 	getMoveFromUser(gameBoardState)
 	#printBoard(gameBoardState)
