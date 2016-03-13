@@ -9,6 +9,11 @@ testBoard = [['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9']]
+testBoardWin_Column_And_Row = 
+			[['w','w','w','4','5','6','7','8','9'],
+			['w','w','3','4','5','b','7','8','b'],
+			['1','2','3','4','5','6','7','8','9'],
+			['1','2','b','4','5','b','7','8','b']]
 
 #A method that itterates through the gameBoard and prints each block
 # 1,2,3 of gb 1 then | then 1,2,3 of gb 2 then
@@ -127,8 +132,35 @@ def rotateLeft(gameBoardSubBoardTarget):
 			gameBoardSubBoardTarget[3],
 			gameBoardSubBoardTarget[6]]
 
+#returns the color of the winner (b or w) or n if neither win
+def checkWinningStateRows(gameBoardState):
+	for r in range (0,3):
+		#block 1 and 2
+		if gameBoardState[0][3 * r + 0] == gameBoardState[0][3 * r + 1] == gameBoardState[0][3 * r + 2] == gameBoardState[1][3 * r + 0] == gameBoardState[1][3 * r + 0]:
+			return gameBoardState[0][0]
+		if gameBoardState[0][3 * r + 1] == gameBoardState[0][3 * r + 2] == gameBoardState[1][3 * r + 0] == gameBoardState[1][3 * r + 1] == gameBoardState[1][3 * r + 2]:
+			return gameBoardState[0][2]
+		#block 3 and 4
+		if gameBoardState[2][3 * r + 0] == gameBoardState[2][3 * r + 1] == gameBoardState[2][3 * r + 2] == gameBoardState[3][3 * r + 0] == gameBoardState[3][3 * r + 0]:
+			return gameBoardState[2][3 * r + 0]
+		if gameBoardState[2][3 * r + 1] == gameBoardState[2][3 * r + 2] == gameBoardState[3][3 * r + 0] == gameBoardState[3][3 * r + 1] == gameBoardState[3][3 * r + 2]:
+			return gameBoardState[2][3 * r + 1]
+	return 'n'
+
+def checkWinningStateCols(gameBoardState):
+	#s stands for squareSets
+	for s in range (0,2):
+		for r in range (0,3):
+			if gameBoardState[0+s][0+r] == gameBoardState[0+s][3+r] == gameBoardState[0+s][6+r] == gameBoardState[2+s][0+r] == gameBoardState[2+s][3+r]:
+				return gameBoardState[0][0+r]
+			if gameBoardState[0+s][3+r] == gameBoardState[0+s][6+r] == gameBoardState[2+s][0+r] == gameBoardState[2+s][3+r] == gameBoardState[2+s][6+r]:
+				return gameBoardState[0][2+r]
+	return 'n'
+
 if __name__ == "__main__":
 	printBoard(rotateGame(testBoard, 4, 'L'))
 	printBoard(rotateGame(testBoard, 1, 'R'))
+	print (checkWinningStateCols(testBoardWin))
+	print (checkWinningStateRows(testBoardWin))
 	#print (getMoveFromUser(gameBoardState))
 	#printBoard(gameBoardState)
