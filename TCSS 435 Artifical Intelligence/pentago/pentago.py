@@ -9,8 +9,7 @@ testBoard = [['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9'],
 			['1','2','3','4','5','6','7','8','9']]
-testBoardWin_Column_And_Row = 
-			[['w','w','w','4','5','6','7','8','9'],
+testBoardWin_Column_And_Row = [['w','w','w','4','5','6','7','8','9'],
 			['w','w','3','4','5','b','7','8','b'],
 			['1','2','3','4','5','6','7','8','9'],
 			['1','2','b','4','5','b','7','8','b']]
@@ -132,70 +131,82 @@ def rotateLeft(gameBoardSubBoardTarget):
 			gameBoardSubBoardTarget[3],
 			gameBoardSubBoardTarget[6]]
 
+#returns a list of winners.
 def checkForWin(gameBoardState):
-	winner = checkWinningStateCols(gameBoardState) 
-	if winner != 'n':
-		return winner
+	winner = ()
+	winner = checkWinningStateCols(gameBoardState,winner) 
+	if len(winner) == 1:
+		return [list(winner)[0]]
+	if len(winner) == 2:
+		return ['w','b']
 	winner = checkWinningStateRows(gameBoardState)
-	if winner != 'n':
-		return winner
-	return checkWinningDiagnol(gameBoardState)
+	if len(winner) == 1:
+		return [list(winner)[0]]
+	if len(winner) == 2:
+		return ['w','b']
+	winner = checkWinningDiagnol(gameBoardState)
+	if len(winner) == 1:
+		return [list(winner)[0]]
+	if len(winner) == 2:
+		return ['w','b']
+	return ['n']
 
-
-def checkWinningDiagnol(gameBoardState):
+def checkWinningDiagnol(gameBoardState,winnerSet):
 	#check right to left out most diagnols
 	if gameBoardState[0][1] == gameBoardState[0][5] == gameBoardState[1][6] == gameBoardState[3][1] == gameBoardState[0][5]:
-		return gameBoardState[0][1]
+		winnerSet.add(gameBoardState[0][1])
 	if gameBoardState[0][3] == gameBoardState[0][7] == gameBoardState[2][2] == gameBoardState[3][3] == gameBoardState[0][7]:
-		return gameBoardState[0][3]
+		winnerSet.add(gameBoardState[0][3])
 	#check the two right to left middle chances
 	if gameBoardState[0][0] == gameBoardState[0][4] == gameBoardState[0][8] == gameBoardState[3][0] == gameBoardState[3][4]:
-		return gameBoardState[0][0]
+		winnerSet.add(gameBoardState[0][0])
 	if gameBoardState[0][4] == gameBoardState[0][8] == gameBoardState[3][0] == gameBoardState[3][4] == gameBoardState[3][8]:
-		return gameBoardState[0][4]
+		winnerSet.add(gameBoardState[0][4])
 	#check left to right out most diagnols
 	if gameBoardState[1][1] == gameBoardState[0][3] == gameBoardState[0][8] == gameBoardState[2][1] == gameBoardState[2][3]:
-		return gameBoardState[1][1]
+		winnerSet.add(gameBoardState[1][1])
 	if gameBoardState[1][5] == gameBoardState[1][7] == gameBoardState[3][0] == gameBoardState[2][5] == gameBoardState[2][7]:
-		return gameBoardState[1][5]
+		winnerSet.add(gameBoardState[1][5])
 	#check the two left to right middle chances
 	if gameBoardState[2][6] == gameBoardState[2][4] == gameBoardState[2][2] == gameBoardState[1][6] == gameBoardState[1][4]:
-		return gameBoardState[2][6]
+		winnerSet.add(gameBoardState[2][6])
 	if gameBoardState[2][4] == gameBoardState[2][2] == gameBoardState[1][6] == gameBoardState[1][4] == gameBoardState[1][2]:
-		return gameBoardState[2][4]
-	#no winner found
-	return 'n'
+		winnerSet.add(gameBoardState[2][4])
+	#if set has length 0, no winner found
+	return winnerSet
 
 
 #returns the color of the winner (b or w) or n if neither win
-def checkWinningStateRows(gameBoardState):
+def checkWinningStateRows(gameBoardState,winnerSet):
 	for r in range (0,3):
 		#block 1 and 2
 		if gameBoardState[0][3 * r + 0] == gameBoardState[0][3 * r + 1] == gameBoardState[0][3 * r + 2] == gameBoardState[1][3 * r + 0] == gameBoardState[1][3 * r + 0]:
-			return gameBoardState[0][0]
+			winnerSet.add(gameBoardState[0][0])
 		if gameBoardState[0][3 * r + 1] == gameBoardState[0][3 * r + 2] == gameBoardState[1][3 * r + 0] == gameBoardState[1][3 * r + 1] == gameBoardState[1][3 * r + 2]:
-			return gameBoardState[0][2]
+			winnerSet.add(gameBoardState[0][2])
 		#block 3 and 4
 		if gameBoardState[2][3 * r + 0] == gameBoardState[2][3 * r + 1] == gameBoardState[2][3 * r + 2] == gameBoardState[3][3 * r + 0] == gameBoardState[3][3 * r + 0]:
-			return gameBoardState[2][3 * r + 0]
+			winnerSet.add(gameBoardState[2][3 * r + 0])
 		if gameBoardState[2][3 * r + 1] == gameBoardState[2][3 * r + 2] == gameBoardState[3][3 * r + 0] == gameBoardState[3][3 * r + 1] == gameBoardState[3][3 * r + 2]:
-			return gameBoardState[2][3 * r + 1]
-	return 'n'
+			winnerSet.add(gameBoardState[2][3 * r + 1])
+	#if set has length 0, no winner found
+	return winnerSet
 
-def checkWinningStateCols(gameBoardState):
+def checkWinningStateCols(gameBoardState,winnerSet):
 	#s stands for squareSets
 	for s in range (0,2):
 		for r in range (0,3):
 			if gameBoardState[0+s][0+r] == gameBoardState[0+s][3+r] == gameBoardState[0+s][6+r] == gameBoardState[2+s][0+r] == gameBoardState[2+s][3+r]:
-				return gameBoardState[0][0+r]
+				winnerSet.add(gameBoardState[0][0+r])
 			if gameBoardState[0+s][3+r] == gameBoardState[0+s][6+r] == gameBoardState[2+s][0+r] == gameBoardState[2+s][3+r] == gameBoardState[2+s][6+r]:
-				return gameBoardState[0][2+r]
-	return 'n'
+				winnerSet.add(gameBoardState[0][2+r])
+	#if set has length 0, no winner found
+	return winnerSet
 
 if __name__ == "__main__":
 	printBoard(rotateGame(testBoard, 4, 'L'))
 	printBoard(rotateGame(testBoard, 1, 'R'))
-	print (checkWinningStateCols(testBoardWin))
-	print (checkWinningStateRows(testBoardWin))
+	print (checkWinningStateCols(testBoardWin_Column_And_Row))
+	print (checkWinningStateRows(testBoardWin_Column_And_Row))
 	#print (getMoveFromUser(gameBoardState))
 	#printBoard(gameBoardState)
